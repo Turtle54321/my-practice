@@ -10,6 +10,7 @@ public class MyRunnable implements Runnable{
     MyRunnable(Integer num){
         this.num = num;
     }
+    @Override
     public void run() {
         while (true){
             System.out.println(Thread.currentThread().getName()+"线程"+Thread.currentThread().getId()+"值"+this.num++);
