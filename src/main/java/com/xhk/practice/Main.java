@@ -1,7 +1,11 @@
 package com.xhk.practice;
 
+import java.lang.ref.SoftReference;
+import java.nio.channels.SelectionKey;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**
  * @author xuhaikun
@@ -12,11 +16,7 @@ public class Main {
 
     public static void main(String[] args){
 
-        List<String> list = new ArrayList();
-        list.add("123");
-        list.add("234");
-        System.out.println(list.toString());
-        System.out.println(list.toString());
+
 
     }
 }

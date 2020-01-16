@@ -10,6 +10,13 @@ import java.util.concurrent.Executors;
  */
 public class Main {
     public static void main(String[] args){
+
+        ClassLoader cl = new ClassLoader() {
+            @Override
+            public Class<?> loadClass(String name) throws ClassNotFoundException {
+                return super.loadClass(name);
+            }
+        };
         //Thread thread = new Thread(new MyRunnable());
         //Thread thread1 = new Thread(new MyRunnable(2));
         //thread.start();
@@ -25,13 +32,13 @@ public class Main {
         //JoinExample example = new JoinExample();
         //example.test();
 
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        WaitNotifyExample example = new WaitNotifyExample();
-        executorService.execute(() -> example.after());
-        executorService.execute(() -> example.before());
-
-        CyclicBarrier cyclicBarrier = new CyclicBarrier();
-        cyclicBarrier.await();
-        cyclicBarrier.reset();
+        //ExecutorService executorService = Executors.newCachedThreadPool();
+        //WaitNotifyExample example = new WaitNotifyExample();
+        //executorService.execute(() -> example.after());
+        //executorService.execute(() -> example.before());
+        //
+        //CyclicBarrier cyclicBarrier = new CyclicBarrier();
+        //cyclicBarrier.await();
+        //cyclicBarrier.reset();
     }
 }
